@@ -1,14 +1,13 @@
 import sys
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+if len(sys.argv) < 2:
+        print("Please enter an URL as well.")
+        sys.exit()
 url=sys.argv[1]
 if "https://" not in url:
     url="https://"+url
-def getPage(url):
-    if len(sys.argv) < 2:
-        print("Please enter an URL as well.")
-        sys.exit()
- 
+def getPage(url): 
     driver = webdriver.Chrome()
     driver.get(url)
     title = driver.title
